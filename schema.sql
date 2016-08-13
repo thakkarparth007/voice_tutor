@@ -47,13 +47,13 @@ CREATE TABLE `Progress` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `Session`
+-- Table structure for table `Sessions`
 --
 
-DROP TABLE IF EXISTS `Session`;
+DROP TABLE IF EXISTS `Sessions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Session` (
+CREATE TABLE `Sessions` (
   `phoneNumber` char(10) DEFAULT NULL,
   `callSid` varchar(50) NOT NULL,
   `stateId` varchar(50) DEFAULT NULL,
@@ -103,4 +103,4 @@ CREATE TABLE `Users` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-08-13 23:46:33
+-- Dump completed on 2016-08-14  0:04:50
