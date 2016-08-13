@@ -54,11 +54,11 @@ DROP TABLE IF EXISTS `Sessions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Sessions` (
-  `phoneNumber` char(10) DEFAULT NULL,
+  `phoneNumber` char(10) NOT NULL,
   `callSid` varchar(50) NOT NULL,
   `stateId` varchar(50) DEFAULT NULL,
   `validTill` datetime DEFAULT NULL,
-  PRIMARY KEY (`callSid`)
+  PRIMARY KEY (`phoneNumber`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -103,4 +103,4 @@ CREATE TABLE `Users` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-08-14  0:39:08
+-- Dump completed on 2016-08-14  0:52:27
