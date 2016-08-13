@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.12, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 5.5.50, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: svnit_hackathon_aug16
 -- ------------------------------------------------------
--- Server version	5.7.12
+-- Server version	5.5.50-0ubuntu0.14.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -32,6 +32,15 @@ CREATE TABLE `Curriculum` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `Curriculum`
+--
+
+LOCK TABLES `Curriculum` WRITE;
+/*!40000 ALTER TABLE `Curriculum` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Curriculum` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `Progress`
 --
 
@@ -45,6 +54,15 @@ CREATE TABLE `Progress` (
   `lastSection` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Progress`
+--
+
+LOCK TABLES `Progress` WRITE;
+/*!40000 ALTER TABLE `Progress` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Progress` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `Sessions`
@@ -63,6 +81,15 @@ CREATE TABLE `Sessions` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `Sessions`
+--
+
+LOCK TABLES `Sessions` WRITE;
+/*!40000 ALTER TABLE `Sessions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Sessions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `States`
 --
 
@@ -75,9 +102,20 @@ CREATE TABLE `States` (
   `input` varchar(50) NOT NULL,
   `nextStateId` varchar(50) DEFAULT NULL,
   `promptAudioId` varchar(50) DEFAULT NULL,
+  `output` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`,`input`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `States`
+--
+
+LOCK TABLES `States` WRITE;
+/*!40000 ALTER TABLE `States` DISABLE KEYS */;
+INSERT INTO `States` VALUES ('decide subject prompt','Deciding the subject to study','*','decide subject response','decide subject prompt.wav',NULL),('start','The first state','*','decide subject prompt','start.wav',NULL);
+/*!40000 ALTER TABLE `States` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `Users`
@@ -93,6 +131,15 @@ CREATE TABLE `Users` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Users`
+--
+
+LOCK TABLES `Users` WRITE;
+/*!40000 ALTER TABLE `Users` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Users` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -103,4 +150,4 @@ CREATE TABLE `Users` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-08-14  1:31:25
+-- Dump completed on 2016-08-14  1:53:16
