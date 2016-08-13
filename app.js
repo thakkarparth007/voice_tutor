@@ -6,6 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var initiate = require('./routes/initiate');
+var prompt = require('./routes/prompt');
+var response = require('./routes/response');
 
 var app = express();
 
@@ -21,7 +23,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(function(req, res, next) { req.query.CallFrom = req.query.CallFrom && req.query.CallFrom.substr(1); next(); });
 app.use('/initiate', initiate);
+app.use('/prompt', prompt);
+app.use('/response', response);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
