@@ -72,7 +72,7 @@ DROP TABLE IF EXISTS `States`;
 CREATE TABLE `States` (
   `id` varchar(50) NOT NULL,
   `description` varchar(255) DEFAULT NULL,
-  `input` varchar(255) NOT NULL,
+  `input` varchar(255) DEFAULT NULL,
   `nextStateId` varchar(50) NOT NULL,
   `promptAudioId` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
@@ -103,4 +103,4 @@ CREATE TABLE `Users` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-08-14  0:04:50
+-- Dump completed on 2016-08-14  0:16:15
